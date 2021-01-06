@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLICER | URL Shortener | Easiest way to get short URLs by Kaan Ersoy</title>
+    <link rel="icon" href="./assets/favicon.ico">
+    <link rel="stylesheet" href="style.css">
+    <link rel="apple-touch-icon" sizes="57x57" href="./assets/fav-icons/favicon-57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./assets/fav-icons/favicon-60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./assets/fav-icons/favicon-72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./assets/fav-icons/favicon-76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./assets/fav-icons/favicon-114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./assets/fav-icons/favicon-120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./assets/fav-icons/favicon-144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./assets/fav-icons/favicon-152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/fav-icons/favicon-180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./assets/fav-icons/favicon-192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/fav-icons/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./assets/fav-icons/favicon-96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/fav-icons/favicon-16.png">
+</head>
+<body class="dark-mode">
+    <header>
+        <div class="logo-container">
+            <div class="col">
+                <img src="./assets/slicer-logo-purp.svg" alt="Slicer Logo">
+            </div>
+            <div class="col">
+                <h1>SLICER</h1>
+                <h2>Easiest way to get SHORT URLs <small>by Kaan Ersoy</small></h2>
+            </div>
+        </div>
+    </header>
+    <section class="form">
+        <form onsubmit="">
+            <div class="form-group">
+                <label for="url">URL</label>
+                <input autofocus type="url" placeholder="https://example.com">
+            </div>
+            <div class="form-group">
+                <label for="slug">SLUG <small>(OPTIONAL)</small></label>
+                <input type="text" placeholder="https://slicer.fun/slug">
+            </div>
+            <button type="submit">Create URL</button>
+        </form>
+    </section>
+    <div class="link-created">
+        <div class="alert-box">
+            <div class="wrapper">
+                <h3>Link is Created!</h3>
+                <a href="slicer.io/examplelink">slicer.fun/examplelink</a>
+                <button>Go Back!</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

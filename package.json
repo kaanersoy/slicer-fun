@@ -1,0 +1,24 @@
+{
+  "name": "slicer-fun",
+  "version": "1.0.0",
+  "description": "URL Shortener",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "helmet": "^4.3.1",
+    "monk": "^7.3.2",
+    "morgan": "^1.10.0",
+    "yup": "^0.32.8"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "nodemon": "^2.0.6"
+  }
+}
