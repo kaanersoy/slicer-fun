@@ -12,36 +12,34 @@ const {DB_URL, PORT} = process.env;
 
 //DB CONNECTION
 const db = monk(DB_URL);
-db.then(() => {
-    console.log("db is connected!!!");
-})
 
 const urls = db.get('urls');
-urls.createIndex('name');
-
+urls.createIndex('slug');
 const app = express();
 
-
 //MiddleWares!!!!
-// app.use(yup());
-app.use(helmet());
 app.use(morgan('tiny'));
+app.use(helmet());
 app.use(cors());
 app.use(express.json());
 app.use(express.static("./public"));
-
 
 // app.get('/url/:id', (req,res) => {
 //     //TODO get a short url by id( using by uniqID )
 // })
 
-
 app.get('/:id', async (req,res) => {
-    const {id} = req.params;
-    const slug = id;
-    const redirectUrl = await urls.findOne({slug});
-
-    res.redirect(`${redirectUrl}`);
+    const { id:slug } = req.params;
+    try {
+        const redirectUrl = await urls.findOne({slug});
+        if(redirectUrl){
+            res.redirect(redirectUrl.url);
+        }
+        res.redirect(`?error=${slug} is not found`);
+    } catch (err) {
+        res.redirect(`?error=Link is not found`);
+    }
+    
 })
 
 const schema = yup.object().shape({

@@ -92,6 +92,15 @@ section.form form .form-group label small{
     font-weight: 400;
     font-size: 10px;
 }
+section.form form .form-group .input-wrapper{
+    display: flex;
+    align-items: center;
+}
+section.form form .form-group .input-wrapper img{
+    width: 20px;
+    margin: 0 10px;
+}
+
 section.form form .form-group input{
     display: block;
     width: 100%;

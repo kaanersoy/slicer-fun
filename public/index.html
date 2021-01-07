@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src-elem https://unpkg.com/vue@next" /> -->
     <title>SLICER | URL Shortener | Easiest way to get short URLs by Kaan Ersoy</title>
     <link rel="icon" href="./assets/favicon.ico">
     <link rel="stylesheet" href="style.css">
@@ -32,20 +33,28 @@
             </div>
         </div>
     </header>
-    <section class="form">
-        <form onsubmit="">
-            <div class="form-group">
-                <label for="url">URL</label>
-                <input autofocus type="url" placeholder="https://example.com">
-            </div>
-            <div class="form-group">
-                <label for="slug">SLUG <small>(OPTIONAL)</small></label>
-                <input type="text" placeholder="https://slicer.fun/slug">
-            </div>
-            <button type="submit">Create URL</button>
-        </form>
-    </section>
-    <div class="link-created">
+    <main id="app">
+        <section class="form">
+            <form @submit.prevent="getShortUrl()">
+                <div class="form-group">
+                    <label for="url">URL</label>
+                    <div class="input-wrapper">
+                        <input autofocus type="url" v-model="url" placeholder="https://example.com">
+                        <img src="./assets/icons/link.svg" alt="URL Icon">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="slug">SLUG <small>(OPTIONAL)</small></label>
+                    <div class="input-wrapper">
+                        <input type="text" v-model="slug" placeholder="https://slicer.fun/slug">
+                        <img src="./assets/icons/slug.svg" alt="Slug Icon">
+                    </div>
+                </div>
+                <button type="submit">Create URL</button>
+            </form>
+        </section>
+    </main>
+    <div class="link-created" v-if="isCreated">
         <div class="alert-box">
             <div class="wrapper">
                 <h3>Link is Created!</h3>
@@ -54,5 +63,9 @@
             </div>
         </div>
     </div>
+
+
+    <script src="https://unpkg.com/vue@2.6.12/dist/vue.js"></script>
+    <!-- <script src="app.js"></script> -->
 </body>
 </html>
