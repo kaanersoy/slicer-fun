@@ -31,14 +31,17 @@ app.use(express.json());
 app.use(express.static("./public"));
 
 
-app.get('/url/:id', (req,res) => {
-    //TODO get a short url by id( using by uniqID )
-})
+// app.get('/url/:id', (req,res) => {
+//     //TODO get a short url by id( using by uniqID )
+// })
 
 
-app.get('/:id', (req,res) => {
-    //TODO redirect to website
-    console.log('Redirecting to Website');
+app.get('/:id', async (req,res) => {
+    const {id} = req.params;
+    const slug = id;
+    const redirectUrl = await urls.findOne({slug});
+
+    res.redirect(`${redirectUrl}`);
 })
 
 const schema = yup.object().shape({
