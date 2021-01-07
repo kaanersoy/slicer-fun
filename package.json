@@ -15,6 +15,7 @@
     "helmet": "^4.3.1",
     "monk": "^7.3.2",
     "morgan": "^1.10.0",
+    "nanoid": "^3.1.20",
     "yup": "^0.32.8"
   },
   "devDependencies": {
