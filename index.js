@@ -9,7 +9,16 @@ const {nanoid} = require('nanoid');
 require('dotenv').config();
 
 const {DB_URL, PORT} = process.env;
-const db = require('monk')(DB_URL);
+
+//DB CONNECTION
+const db = monk(DB_URL);
+db.then(() => {
+    console.log("db is connected!!!");
+})
+
+const urls = db.get('urls');
+urls.createIndex('name');
+
 const app = express();
 
 
@@ -47,12 +56,19 @@ app.post('/url', async (req,res,next) =>{
         })
         if(!slug){
             slug = nanoid(6);
+        } else {
+            const isExist = await urls.findOne({ slug });
+            if(isExist) {
+                throw new Error('Slug is in use. 🤦‍♂️');
+            }
         }
         slug = slug.toLowerCase();
-        res.json({
+        const newUrl = {
+            url,
             slug,
-            url
-        })
+        }
+        const created = await urls.insert(newUrl);
+        res.json(created);
     } catch (error) {
         next(error);
     }

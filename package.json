@@ -16,9 +16,7 @@
     "monk": "^7.3.2",
     "morgan": "^1.10.0",
     "nanoid": "^3.1.20",
-    "yup": "^0.32.8"
-  },
-  "devDependencies": {
+    "yup": "^0.32.8",
     "dotenv": "^8.2.0",
     "nodemon": "^2.0.6"
   }
