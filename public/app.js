@@ -23,7 +23,7 @@ const app = new Vue({
             })
             .then(response => response.json())
             .then(data => {
-                if(data.message && data.message.startsWith("url must be a `string` type")){
+                if((data.message && data.message.startsWith("url must be a `string` type")) || data.message && data.message.startsWith("url is a required field")){
                     this.responseMessage = "Please enter a URL🤷‍♂️."
                 }else{
                     this.responseMessage=data.message;
@@ -44,7 +44,7 @@ const app = new Vue({
         },
         goBack: function(){
             this.isActive=false;
-            // console.log(this.isActive);
+            this.isLinkUsable=false;
         }
     }
 })
