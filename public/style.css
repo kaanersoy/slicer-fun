@@ -149,9 +149,9 @@ body.dark-mode form button{
     z-index: 999;
     background-color: rgba(255, 255, 255, .15);  
     backdrop-filter: blur(5px);
-    transition: 200ms ease;
+    /* transition: 200ms ease;
     visibility: hidden;
-    opacity: 0;
+    opacity: 0; */
 }
 .link-created.active{
     visibility: visible;
@@ -194,5 +194,39 @@ body.dark-mode form button{
     cursor: pointer;
     background-color: rgb(var(--maincolor));
     color: #fff;
-    
+}
+
+
+.not-found-container{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.not-found-wrapper{
+    width: 60%;
+    margin: 0 auto;
+}
+.not-found-wrapper .logo{
+    margin-bottom: 100px;
+}
+.not-found-wrapper .logo img{
+    max-width: 60%;
+    margin: 0 auto;
+    display: block;
+    height: auto;
+}
+.not-found-wrapper .header {
+    text-align: center;
+}
+.not-found-wrapper .header h1{
+    color: rgb(var(--maincolor));
+    font-size: 25px;
+    font-weight: bold;
+}
+.not-found-wrapper .header p{
+    padding: 20px;
+    font-size: 18px;
+    font-weight: bold;
 }
