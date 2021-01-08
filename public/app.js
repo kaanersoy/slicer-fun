@@ -23,12 +23,12 @@ const app = new Vue({
             })
             .then(response => response.json())
             .then(data => {
-                this.isActive=true;
-                if(data.message.startsWith("url must be a `string` type,")){
+                if(data.message && data.message.startsWith("url must be a `string` type")){
                     this.responseMessage = "Please enter a URL🤷‍♂️."
                 }else{
                     this.responseMessage=data.message;
                 }
+                this.isActive=true;
                 if(data.url){
                     if(this.slug != "" || !this.slug || this.slug == null){
                         this.slug = data.slug;
