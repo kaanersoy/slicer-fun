@@ -19,7 +19,16 @@ const app = express();
 
 //MiddleWares!!!!
 app.use(morgan('tiny'));
-app.use(helmet());
+
+app.use(helmet({ // see: https://www.npmjs.com/package/helmet
+    contentSecurityPolicy: {
+        directives: {
+            ...helmet.contentSecurityPolicy.getDefaultDirectives(),
+            scriptSrcElem: ["'self'", "unpkg.com"],
+        }
+    }
+}));
+
 app.use(cors());
 app.use(express.json());
 app.use(express.static("./public"));
