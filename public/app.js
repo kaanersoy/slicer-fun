@@ -41,7 +41,7 @@ const app = new Vue({
         },
         goBack: function(){
             this.isActive=false;
-            console.log(this.isActive);
+            // console.log(this.isActive);
         }
     }
 })

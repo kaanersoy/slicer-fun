@@ -2,6 +2,7 @@
 
 
 :root{
+    /* #7041ff */
     --maincolor: 112, 65, 255;
     --secondarycolor: 112, 65, 255;
     --main-text-color: #fff;
@@ -43,6 +44,8 @@ header .logo-container{
     align-items: center;
 }
 
+
+
 header .logo-container .col{
     width: 100%;
 }
@@ -69,6 +72,35 @@ header h2 small{
     font-weight: 400;
     font-size: 12px;
 }
+
+
+@media screen and (min-width: 320px) and (max-width: 414px) {
+    header{
+        padding: 30px 0 ;
+    }
+    header .logo-container{
+        width: 80%;
+        display: block;
+        text-align: center;
+    }
+    header .logo-container .col:nth-child(1){
+        margin-bottom: 15px;
+    }
+    
+    header h2{
+        font-weight: 600;
+        font-size: 20px;
+    }
+}
+@media screen and (max-width: 1024px) {
+    header{
+        padding: 70px 0 ;
+    }
+    header .logo-container{
+        width: 70%;
+    }
+}
+
 
 section.form{
     width: 50%; margin: 0 auto;
@@ -109,7 +141,7 @@ section.form form .form-group input{
     border: none;
     border-bottom: 2px solid rgba(var(--maincolor), .7);
     transition: 200ms ease;
-    padding: 8px 2px;
+    padding: 8px 0px;
     font-size: 18px;
     color: var(--main-text-color);
 }
@@ -140,6 +172,34 @@ body.dark-mode form button{
     color: #ffffff;
 }
 
+@media screen and (min-width: 320px) and (max-width: 414px) {
+    section.form{
+        width: 85%;
+        padding: 15px;
+    }
+    section.form form .form-group{
+        margin: unset;
+        margin-bottom: 10px;
+    }
+    section.form form .form-group label{
+        margin-bottom: 0;
+        font-size: 15px;
+    }
+    section.form form button{
+        display: block;
+        width: 140px;
+        border-radius: 30px;
+        padding: 10px;
+        font-size: 20px;
+        margin: 15px auto 0 auto;
+    }
+}
+@media screen and (max-width: 1024px) {
+    section.form{
+        width: 70%;
+    }
+}
+
 .link-created{
     position: absolute;
     width: 100%;
@@ -161,7 +221,7 @@ body.dark-mode form button{
 .link-created .alert-box{
     width: 30%;
     height: 30%;
-    background-color: rgba(112, 65, 255, 0.2);
+    background-color:rgba(13, 17, 23, 0.750);
     backdrop-filter: blur(5px);
     border-radius: 50px;
     position: absolute;
@@ -180,7 +240,7 @@ body.dark-mode form button{
 }
 .link-created .alert-box a{
     font-size: 30px;
-    color: #3a14ad;
+    color: #7041ff;
 }
 .link-created .alert-box button{
     display: block;
@@ -194,6 +254,39 @@ body.dark-mode form button{
     cursor: pointer;
     background-color: rgb(var(--maincolor));
     color: #fff;
+}
+
+@media screen and (min-width: 320px) and (max-width: 414px) {
+    .link-created .alert-box{
+        width: 80%;
+        height: unset;
+    }
+    .link-created .alert-box h3{
+        font-size: 22px;
+        padding: 15px;
+    }
+    .link-created .alert-box a{
+        font-size: 20px;
+    }
+    .link-created .alert-box button{
+        margin: 15px auto;
+    }
+
+}
+@media screen and (max-width: 1024px) {
+    .link-created .alert-box{
+        border-radius: 15px;
+    }
+    .link-created .alert-box a{
+        padding: 8px;
+        word-break: break-all;
+        margin-bottom: 10px;
+    }
+    .link-created .alert-box{
+        padding: 25px 10px;
+        width: 60%;
+        height: unset;
+    }
 }
 
 
