@@ -11,13 +11,12 @@
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "helmet": "^4.3.1",
     "monk": "^7.3.2",
     "morgan": "^1.10.0",
     "nanoid": "^3.1.20",
-    "yup": "^0.32.8",
-    "dotenv": "^8.2.0",
-    "nodemon": "^2.0.6"
+    "nodemon": "^2.0.6",
+    "yup": "^0.32.8"
   }
 }

@@ -1,7 +1,6 @@
 const express = require('express');
 const yup = require('yup');
 const monk = require('monk');
-const helmet = require('helmet');
 const cors = require('cors');
 const morgan = require('morgan');
 const {nanoid} = require('nanoid');
@@ -12,17 +11,16 @@ const {DB_URL, PORT} = process.env;
 
 //DB CONNECTION
 const db = monk(DB_URL);
-
 const urls = db.get('urls');
 urls.createIndex('slug');
+
 const app = express();
 
 //MiddleWares!!!!
 app.use(morgan('tiny'));
-app.use(helmet());
 app.use(cors());
 app.use(express.json());
-app.use(express.static("./public"));
+app.use(express.static("public"));
 
 app.get('/:id', async (req,res) => {
     const { id:slug } = req.params;
@@ -69,6 +67,12 @@ app.post('/url', async (req,res,next) =>{
         next(error);
     }
 })
+
+app.use((req, res, next) => {
+    res.setHeader('Content-Security-Policy', "script-src 'self' https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js")
+    next();
+})
+  
 
 app.use((error, req, res, next) => {
     if(error.status){

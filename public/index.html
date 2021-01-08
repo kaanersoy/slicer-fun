@@ -46,7 +46,7 @@
                 <div class="form-group">
                     <label for="slug">SLUG <small>(OPTIONAL)</small></label>
                     <div class="input-wrapper">
-                        <input type="text" v-model="slug" placeholder="https://slicer.fun/slug">
+                        <input type="text" v-model="slug" @keyup="logsome()" placeholder="https://slicer.fun/slug">
                         <img src="./assets/icons/slug.svg" alt="Slug Icon">
                     </div>
                 </div>
@@ -63,7 +63,8 @@
             </div>
         </div>
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <!-- <script src="assets/vue.js"></script> -->
+    <script src="./app.js"></script>
 </body>
 </html>

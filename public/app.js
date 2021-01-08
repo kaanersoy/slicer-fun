@@ -6,17 +6,17 @@ const app = new Vue({
         isCreated: false
     },
     methods:{
-        // getShortUrl: async () => {
-        //     const data = {
-        //         url,
-        //         slug
-        //     }
-        //     const response = await fetch('/url', {
-        //         method: 'POST',
-        //         headers: {'Content-type' : 'application/json'},
-        //         body: JSON.stringify(data)
-        //     })
-        //     return response.json();
-        // }
+        getShortUrl: async () => {
+            const data = {
+                url,
+                slug
+            }
+            const response = await fetch('/url', {
+                method: 'POST',
+                headers: {'Content-type' : 'application/json'},
+                body: JSON.stringify(data)
+            })
+            return response.json();
+        }
     }
 })
