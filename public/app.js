@@ -24,7 +24,11 @@ const app = new Vue({
             .then(response => response.json())
             .then(data => {
                 this.isActive=true;
-                this.responseMessage=data.message;
+                if(data.message.startsWith("url must be a `string` type,")){
+                    this.responseMessage = "Please enter a URL🤷‍♂️."
+                }else{
+                    this.responseMessage=data.message;
+                }
                 if(data.url){
                     if(this.slug != "" || !this.slug || this.slug == null){
                         this.slug = data.slug;
@@ -32,7 +36,6 @@ const app = new Vue({
                     this.isLinkUsable = true;
                     this.redirectURL = `${window.location.origin}/${this.slug}`
                     this.responseMessage = "Link is Created😍"
-                    
                 }
             })
             .catch((err) => {

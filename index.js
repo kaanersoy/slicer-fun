@@ -50,12 +50,10 @@ app.post('/url', async (req,res,next) =>{
         if(!slug){
             slug = nanoid(6);
         }
-
         await schema.validate({
             slug,
             url
         })
-
         slug = slug.toLowerCase();
         const isExist = await urls.findOne({ slug });
         if(isExist) {
