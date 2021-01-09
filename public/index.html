@@ -39,14 +39,14 @@
                 <div class="form-group">
                     <label for="url">URL</label>
                     <div class="input-wrapper">
-                        <input autofocus type="url" v-model="url" name="url" placeholder="https://example.com">
+                        <input autofocus type="url" v-model="url" id="url" name="url" placeholder="https://example.com">
                         <img src="./assets/icons/link.svg" width="20px" height="20px" alt="URL Icon">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="slug">SLUG <small>(OPTIONAL)</small></label>
                     <div class="input-wrapper">
-                        <input type="text" v-model="slug" name="slug" placeholder="https://slicer.fun/slug">
+                        <input type="text" v-model="slug" id="slug" name="slug" placeholder="https://slicer.fun/slug">
                         <img src="./assets/icons/slug.svg" width="20px" height="20px" alt="Slug Icon">
                     </div>
                 </div>
@@ -63,7 +63,20 @@
             </div>
         </div>
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <div class="links-wrapper">
+        <div class="link-item">
+            <a href="https://github.com/kaanersoy/slicer-fun" target="_blank"><img src="./assets/github-logo-32.svg" alt="Slicer Github"></a>
+        </div>
+        <div class="slash">
+            <span>/</span>
+        </div>
+        <div class="link-item">
+            <a href="https://github.com/kaanersoy" target="_blank">Kaan Ersoy</a>
+        </div>
+    </div>
+    <!-- FOR DEV -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script> -->
+    <script src="./assets/vue.min.js"></script>
     <script src="./app.js"></script>
 </body>
 </html>
