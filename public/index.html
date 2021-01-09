@@ -25,7 +25,7 @@
     <header>
         <div class="logo-container">
             <div class="col">
-                <img src="./assets/slicer-logo-purp.svg" alt="Slicer Logo">
+                <img src="./assets/slicer-logo-purp.svg" width="300px" height="144px" alt="Slicer Logo">
             </div>
             <div class="col">
                 <h1>SLICER</h1>
@@ -39,15 +39,15 @@
                 <div class="form-group">
                     <label for="url">URL</label>
                     <div class="input-wrapper">
-                        <input autofocus type="url" v-model="url" placeholder="https://example.com">
-                        <img src="./assets/icons/link.svg" alt="URL Icon">
+                        <input autofocus type="url" v-model="url" name="url" placeholder="https://example.com">
+                        <img src="./assets/icons/link.svg" width="20px" height="20px" alt="URL Icon">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="slug">SLUG <small>(OPTIONAL)</small></label>
                     <div class="input-wrapper">
-                        <input type="text" v-model="slug" placeholder="https://slicer.fun/slug">
-                        <img src="./assets/icons/slug.svg" alt="Slug Icon">
+                        <input type="text" v-model="slug" name="slug" placeholder="https://slicer.fun/slug">
+                        <img src="./assets/icons/slug.svg" width="20px" height="20px" alt="Slug Icon">
                     </div>
                 </div>
                 <button type="submit">Create URL</button>
