@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SLICER is a URL shortener for get shortened URLS. Powered by NodeJS and VueJS">
+    <meta name="author" content="Kaan Ersoy">
+    <link rel="canonical" href="http://www.slicer.fun/" />
     <title>SLICER | URL Shortener | Easiest way to get shortened URLs by Kaan Ersoy</title>
     <base href="./">
     <link rel="icon" href="./assets/favicon.ico">
@@ -20,6 +23,9 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/fav-icons/favicon-32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="./assets/fav-icons/favicon-96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./assets/fav-icons/favicon-16.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#0d1117">
+    <meta name="google-site-verification" content="fjguaK7slstUPrN3va2BdtFcFsfdK4qBwTez0up9pyQ" />
 </head>
 <body class="dark-mode">
     <header>
@@ -57,7 +63,7 @@
             <div class="alert-box">
                 <div class="wrapper">
                     <h3>{{responseMessage}}</h3>
-                    <a v-if="isLinkUsable" :href="redirectURL">{{redirectURL}}</a>
+                    <a v-if="isLinkUsable" rel="noopener" :href="redirectURL">{{redirectURL}}</a>
                     <button v-on:click="goBack">Go Back!</button>
                 </div>
             </div>
@@ -65,13 +71,13 @@
     </main>
     <div class="links-wrapper">
         <div class="link-item">
-            <a href="https://github.com/kaanersoy/slicer-fun" target="_blank"><img src="./assets/github-logo-32.svg" alt="Slicer Github"></a>
+            <a href="https://github.com/kaanersoy/slicer-fun" rel="noopener" target="_blank"><img src="./assets/github-logo-32.svg" alt="Slicer Github"></a>
         </div>
         <div class="slash">
             <span>/</span>
         </div>
         <div class="link-item">
-            <a href="https://github.com/kaanersoy" target="_blank">Kaan Ersoy</a>
+            <a href="https://github.com/kaanersoy" rel="noopener" target="_blank">Kaan Ersoy</a>
         </div>
     </div>
     <!-- FOR DEV -->
