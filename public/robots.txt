@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: http://slicer-fun/sitemap.xml
+
+Sitemap: http://www.slicer.fun/sitemap.xml
