@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: http://www.slicer.fun/sitemap.xml
+Sitemap: https://slicer.fun/sitemap.xml
