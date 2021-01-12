@@ -59,15 +59,17 @@
                 <button type="submit">Create URL</button>
             </form>
         </section>
-        <div class="link-created" v-if="isActive">
-            <div class="alert-box">
-                <div class="wrapper">
-                    <h3>{{responseMessage}}</h3>
-                    <a v-if="isLinkUsable" rel="noopener" :href="redirectURL">{{redirectURL}}</a>
-                    <button v-on:click="goBack">Go Back!</button>
+        <transition name="fade">
+            <div class="link-created" v-if="isActive">
+                <div class="alert-box">
+                    <div class="wrapper">
+                        <h3>{{responseMessage}}</h3>
+                        <a v-if="isLinkUsable" rel="noopener" :href="redirectURL">{{redirectURL}}</a>
+                        <button v-on:click="goBack">Go Back!</button>
+                    </div>
                 </div>
             </div>
-        </div>
+        </transition>
     </main>
     <div class="links-wrapper">
         <div class="link-item">
@@ -81,8 +83,8 @@
         </div>
     </div>
     <!-- FOR DEV -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script> -->
-    <script src="./assets/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <!-- <script src="./assets/vue.min.js"></script> -->
     <script src="./app.js"></script>
 </body>
 </html>

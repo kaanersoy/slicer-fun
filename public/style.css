@@ -106,6 +106,13 @@ header h2 small{
     }
 }
 
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to {
+    opacity: 0;
+}
+
 
 section.form{
     width: 50%; margin: 0 auto;
