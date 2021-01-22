@@ -6,7 +6,10 @@ const app = new Vue({
         isActive: false,
         responseMessage: null,
         isLinkUsable: false,
-        redirectURL: null
+        redirectURL: null,
+        createdUrl: null,
+        createdUrls: [],
+        copiedUrl: null,
     },
     methods:{
         getShortUrl: async function(){
@@ -28,23 +31,37 @@ const app = new Vue({
                 }else{
                     this.responseMessage=data.message;
                 }
-                this.isActive=true;
+
+                if(this.isActive == false){
+                    this.isActive = true;
+                } 
                 if(data.url){
-                    if(this.slug != "" || !this.slug || this.slug == null){
-                        this.slug = data.slug;
-                    }
+                    // if(this.slug != "" || !this.slug || this.slug == null){
+                    //     this.slug = data.slug;
+                    // }
+                    this.createdUrl = data;
+                    this.createdUrls.push(this.createdUrl);
                     this.isLinkUsable = true;
-                    this.redirectURL = `${window.location.origin}/${this.slug}`
-                    this.responseMessage = "Link is Created😍"
+                    this.redirectURL = `${window.location.origin}/${this.slug}`;
+                    this.responseMessage = "Link is Created😍";
                 }
             })
             .catch((err) => {
                 console.error("Error : ", err);
             })
         },
-        goBack: function(){
-            this.isActive=false;
-            this.isLinkUsable=false;
-        }
+        // goBack: function(){
+        //     this.isActive=false;
+        //     this.isLinkUsable=false;
+        // },
+        copyToClipboard: function(e){
+            var buttonId = e.target.id;
+            var selectedInput = document.getElementsByName(buttonId)[0];
+            selectedInput.focus();
+            selectedInput.select();
+            selectedInput.setSelectionRange(0, 99999);
+            document.execCommand("copy");
+            this.copiedUrl = buttonId;
+        },
     }
 })
