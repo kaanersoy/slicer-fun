@@ -44,14 +44,14 @@
                 <div class="form-group">
                     <label for="url">URL</label>
                     <div class="input-wrapper">
-                        <input autofocus type="url" required class="global-input" v-model="url" id="url" name="url" placeholder="https://example.com">
+                        <input autofocus type="url" autocomplete="off" required class="global-input" v-model="url" id="url" name="url" placeholder="https://example.com">
                         <img src="./assets/icons/link.svg" width="20px" height="20px" alt="URL Icon">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="slug">SLUG <small>(OPTIONAL)</small></label>
                     <div class="input-wrapper">
-                        <span>slicer.fun/</span><input type="text" v-model="slug" class="global-input" id="slug" name="slug" placeholder="slug">
+                        <span>slicer.fun/</span><input autocomplete="off" type="text" v-model="slug" class="global-input" id="slug" name="slug" placeholder="slug">
                         <img src="./assets/icons/slug.svg" width="20px" height="20px" alt="Slug Icon">
                     </div>
                 </div>
@@ -59,7 +59,7 @@
             </form>
         </section>
 
-        <div class="created-link form" v-if="isLinkUsable">
+        <div class="created-link form" ref="createdLinks" v-if="isLinkUsable">
             <div class="created-link-header">
                 <h3>Created URLs</h3>
                 <div class="link-table-headers">
@@ -81,40 +81,10 @@
                     <button v-on:click="copyToClipboard" v-else v-bind:class="{ copied: item._id==copiedUrl }" v-bind:id="item._id">Copy</button>
                 </div>
             </div>
+
+            
         </div>
-        <!-- <div class="created-link form">
-            <div class="created-link-header">
-                <h3>Created URLs</h3>
-                <div class="link-table-headers">
-                    <h4>URL</h4>
-                    <h4>Shortened URL</h4>
-                </div>
-            </div>
-            <div class="created-links-wrapper">
-                <div class="created-link-col">
-                    <div class="link-group">
-                        <input readonly="readonly" id="focus-url" name="focus-url" class="global-input" value="URL SEKS"/>
-                    </div>
-                    <div class="link-group">
-                        <input readonly="readonly" id="created-link" name="randomid" class="global-input" value="Slug sex"/>
-                    </div>
-                </div>
-                <div class="created-link-col">
-                    <button v-on:click="copyToClipboard" id="randomid">Copy</button>
-                </div>
-            </div>
-        </div> -->
-        <!-- <transition name="fade">
-            <div class="link-created" v-if="isActive">
-                <div class="alert-box">
-                    <div class="wrapper">
-                        <h3>{{responseMessage}}</h3>
-                        <a v-if="isLinkUsable" rel="noopener" :href="redirectURL">{{redirectURL}}</a>
-                        <button v-on:click="goBack">Go Back!</button>
-                    </div>
-                </div>
-            </div>
-        </transition> -->
+        
     </main>
     <div class="links-wrapper">
         <div class="link-item">

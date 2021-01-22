@@ -224,19 +224,45 @@ body.dark-mode form button{
 }
 
 .created-link{position: relative; margin-top: 20px;}
-/* .created-link:before{content: ''; position: absolute; top: 0; left: 0; width: 50%; height: 3px; background-color: rgba(255, 255, 255, 0.534);border-radius: 2px;} */
 .created-link .created-link-header{text-align: center;}
 .created-link .created-link-header h3{margin-bottom: 30px;font-size: 25px;border-bottom: 2px solid #fff;display: inline-block;line-height: 1.9;}
 .created-link .created-link-header .link-table-headers{display: flex;margin-bottom: 20px;}
 .created-link .created-link-header .link-table-headers h4{flex-grow: 1; display: block; text-align: center;}
 .created-link .created-links-wrapper{display: flex;align-items: center;}
-.created-link .created-link-col{}
 .created-link .created-link-col .link-group{flex-grow: 1;}
 .created-link .created-link-col .link-group:nth-child(2){margin-left: 10px;}
 .created-link .created-link-col:nth-child(1){flex-grow: 1;display: flex;}
 .created-link .created-link-col button{background-color: rgba(var(--maincolor, 1));width: 80px;color: #fff; border: none; border-radius: 5px;padding: 8px 5px; font-size: 18px;margin-left: 10px;}
 .created-link .created-link-col button.copied{background-color: rgba(48, 175, 108,1);transition: 200ms ease;}
 /* .created-link .created-link-col button img{width: 30px; height: 30px;margin-left: 5px;} */
+
+@media screen and (max-width: 1024px) {
+    .created-link{
+        width: 70%;
+    }
+    
+}
+@media screen and (min-width: 320px) and (max-width: 414px) {
+    .created-link{
+        width: 85%;
+        padding: 15px;
+    }
+    .created-link .created-link-header .link-table-headers {
+        display: none;
+    }
+    .created-link .created-links-wrapper{
+        margin-bottom: 15px;
+    }
+    .created-link .created-link-col:nth-child(2){
+        align-self: stretch;
+    }
+    .created-link .created-link-col:nth-child(2) button{
+        height: 100%;
+    }
+    .created-link .created-link-col:nth-child(1){display: block;}
+    .created-link .created-link-col .link-group:nth-child(2){margin-left: unset;}
+}
+
 
 .global-input{
     display: block;

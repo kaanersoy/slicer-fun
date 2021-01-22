@@ -31,7 +31,6 @@ const app = new Vue({
                 }else{
                     this.responseMessage=data.message;
                 }
-
                 if(this.isActive == false){
                     this.isActive = true;
                 } 
