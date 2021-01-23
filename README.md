@@ -9,3 +9,5 @@ It is a URL shortener to get shortened URLs.
 - NodeJS(Serving HTML files and API)
 
 ## Usage
+
+A youtube tutorial here: [SLICER | Easiest URL Shortener - Kaan Ersoy](https://youtu.be/42bQf-04q6Y)
