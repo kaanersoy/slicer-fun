@@ -408,8 +408,6 @@ body.dark-mode form button{
 .links-wrapper{display: flex; align-items: center; position: absolute; top: 0; right: 0;padding-top: 5px;}
 .links-wrapper .link-item{margin: 0 5px;}
 .links-wrapper .link-item a{color: rgb(var(--maincolor));display: block;line-height: 1; margin: 0; padding: 0;}
-.links-wrapper .link-item a img{}
-.links-wrapper .slash{}
 .links-wrapper .slash span{color: rgb(var(--maincolor));}
 
 
@@ -419,3 +417,11 @@ body.dark-mode form button{
 .alert-message-wrapper .alert-content p{font-size: 18px;}
 .alert-message-wrapper .alert-content button{background-color: transparent;border: none;margin-left: 12px;}
 .alert-message-wrapper .alert-content button img{width: 18px;}
+
+@media screen and (min-width: 320px) and (max-width: 414px) {
+    .alert-message-wrapper{
+        width: 75%;
+        text-align: center;
+    }
+    
+}

@@ -1,3 +1,5 @@
+// const { response } = require("express");
+
 const app = new Vue({
     el: '#app',
     data: {
@@ -20,44 +22,55 @@ const app = new Vue({
             }else{
                 formData = {url:this.url}
             }
-            const response = await fetch('/url', {
-                method: 'POST',
-                headers: {'Content-type' : 'application/json'},
-                body: JSON.stringify(formData)
-            })
-            .then(response => response.json())
-            .then(data => {
-                if((data.message && data.message.startsWith("url must be a `string` type")) || data.message && data.message.startsWith("url is a required field")){
-                    this.responseMessage = "Please enter a URL🤷‍♂️."
+            var isCreatedBefore = false;
+            this.createdUrls.forEach(el => {
+                if(el.url == this.url){
+                    isCreatedBefore = true;
+                }
+            });
+            if(isCreatedBefore){
+                this.responseMessage = "Don't use URL you created before!🤦‍♀️";
+                if(this.alertMessage){
+                    this.disableAlertMess();
+                    setTimeout(() => {
+                        this.activeAlertMess();
+                    }, 220);
                 }else{
-                    this.responseMessage=data.message;
-                }
-                if(this.isActive == false){
-                    this.isActive = true;
-                } 
-                if(data.url){
-                    // if(this.slug != "" || !this.slug || this.slug == null){
-                    //     this.slug = data.slug;
-                    // }
-                    this.createdUrl = data;
-                    this.createdUrls.push(this.createdUrl);
-                    this.isLinkUsable = true;
-                    this.redirectURL = `${window.location.origin}/${this.slug}`;
-                    this.responseMessage = "Link is Created😍";
-                }
-                this.disableAlertMess();
-                setTimeout(() => {
                     this.activeAlertMess();
-                }, 220);
-            })
-            .catch((err) => {
-                console.error("Error : ", err);
-            })
+                }
+            }else{
+                const response = await fetch('/url', {
+                    method: 'POST',
+                    headers: {'Content-type' : 'application/json'},
+                    body: JSON.stringify(formData)
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if((data.message && data.message.startsWith("url must be a `string` type")) || data.message && data.message.startsWith("url is a required field")){
+                        this.responseMessage = "Please enter a URL🤷‍♂️."
+                    }else{
+                        this.responseMessage=data.message;
+                    }
+                    if(this.isActive == false){
+                        this.isActive = true;
+                    }
+                    if(data.url){
+                        this.createdUrl = data;
+                        this.createdUrls.push(this.createdUrl);
+                        this.isLinkUsable = true;
+                        this.redirectURL = `${window.location.origin}/${this.slug}`;
+                        this.responseMessage = "Link is Created😍";
+                    }
+                    this.disableAlertMess();
+                    setTimeout(() => {
+                        this.activeAlertMess();
+                    }, 220);
+                })
+                .catch((err) => {
+                    console.error("Error : ", err);
+                })
+            }
         },
-        // goBack: function(){
-        //     this.isActive=false;
-        //     this.isLinkUsable=false;
-        // },
         copyToClipboard: function(e){
             var buttonId = e.target.id;
             var selectedInput = document.getElementsByName(buttonId)[0];
