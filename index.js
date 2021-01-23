@@ -48,7 +48,7 @@ app.post('/url', async (req,res,next) =>{
     let {slug, url} = req.body;
     try {
         if(!slug){
-            slug = nanoid(6);
+            slug = nanoid(5);
         }
         await schema.validate({
             slug,
