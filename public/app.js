@@ -10,6 +10,7 @@ const app = new Vue({
         createdUrl: null,
         createdUrls: [],
         copiedUrl: null,
+        alertMessage: false,
     },
     methods:{
         getShortUrl: async function(){
@@ -44,6 +45,10 @@ const app = new Vue({
                     this.redirectURL = `${window.location.origin}/${this.slug}`;
                     this.responseMessage = "Link is Created😍";
                 }
+                this.disableAlertMess();
+                setTimeout(() => {
+                    this.activeAlertMess();
+                }, 300);
             })
             .catch((err) => {
                 console.error("Error : ", err);
@@ -62,5 +67,11 @@ const app = new Vue({
             document.execCommand("copy");
             this.copiedUrl = buttonId;
         },
+        activeAlertMess: function(){
+            this.alertMessage = true;
+        },
+        disableAlertMess: function(){
+            this.alertMessage = false;
+        }
     }
 })

@@ -27,79 +27,85 @@
     <meta name="google-site-verification" content="fjguaK7slstUPrN3va2BdtFcFsfdK4qBwTez0up9pyQ" />
 </head>
 <body class="dark-mode">
-    <header>
-        <div class="logo-container">
-            <div class="col">
-                <img src="./assets/slicer-logo-purp.svg" width="300px" height="144px" alt="Slicer Logo">
-            </div>
-            <div class="col">
-                <h1>SLICER</h1>
-                <h2>Easiest way to get SHORTENED URLs <small>by Kaan Ersoy</small></h2>
-            </div>
-        </div>
-    </header>
     <main id="app">
-        <section class="form">
-            <form v-on:submit.prevent="getShortUrl">
-                <div class="form-group">
-                    <label for="url">URL</label>
-                    <div class="input-wrapper">
-                        <input autofocus type="url" autocomplete="off" required class="global-input" v-model="url" id="url" name="url" placeholder="https://example.com">
-                        <img src="./assets/icons/link.svg" width="20px" height="20px" alt="URL Icon">
-                    </div>
+        <header>
+            <div class="logo-container">
+                <div class="col">
+                    <img src="./assets/slicer-logo-purp.svg" width="300px" height="144px" alt="Slicer Logo">
                 </div>
-                <div class="form-group">
-                    <label for="slug">SLUG <small>(OPTIONAL)</small></label>
-                    <div class="input-wrapper">
-                        <span>slicer.fun/</span><input autocomplete="off" type="text" v-model="slug" class="global-input" id="slug" name="slug" placeholder="slug">
-                        <img src="./assets/icons/slug.svg" width="20px" height="20px" alt="Slug Icon">
-                    </div>
-                </div>
-                <button type="submit">Create URL</button>
-            </form>
-        </section>
-
-        <div class="created-link form" ref="createdLinks" v-if="isLinkUsable">
-            <div class="created-link-header">
-                <h3>Created URLs</h3>
-                <div class="link-table-headers">
-                    <h4>URL</h4>
-                    <h4>Shortened URL</h4>
+                <div class="col">
+                    <h1>SLICER</h1>
+                    <h2>Easiest way to get SHORTENED URLs <small>by Kaan Ersoy</small></h2>
                 </div>
             </div>
-            <div class="created-links-wrapper" v-for="item in createdUrls" :key="item._id">
-                <div class="created-link-col">
-                    <div class="link-group">
-                        <input readonly="readonly" id="focus-url" name="focus-url" class="global-input" :value="item.url" />
-                    </div>
-                    <div class="link-group">
-                        <input readonly="readonly" id="created-link" v-bind:name="item._id" class="global-input" :value="'slicer.fun/' + item.slug" />
-                    </div>
-                </div>
-                <div class="created-link-col">
-                    <button v-on:click="copyToClipboard" v-if="item._id==copiedUrl"  v-bind:class="{ copied: item._id==copiedUrl }" v-bind:id="item._id">Copied</button>
-                    <button v-on:click="copyToClipboard" v-else v-bind:class="{ copied: item._id==copiedUrl }" v-bind:id="item._id">Copy</button>
-                </div>
-            </div>
-
-            
-        </div>
+        </header>
         
+            <section class="form">
+                <form v-on:submit.prevent="getShortUrl">
+                    <div class="form-group">
+                        <label for="url">URL</label>
+                        <div class="input-wrapper">
+                            <input type="url" autocomplete="off" required class="global-input" v-model="url" id="url" name="url" placeholder="https://example.com">
+                            <img src="./assets/icons/link.svg" width="20px" height="20px" alt="URL Icon">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="slug">SLUG <small>(OPTIONAL)</small></label>
+                        <div class="input-wrapper">
+                            <span>slicer.fun/</span><input autocomplete="off" type="text" v-model="slug" class="global-input" id="slug" name="slug" placeholder="slug">
+                            <img src="./assets/icons/slug.svg" width="20px" height="20px" alt="Slug Icon">
+                        </div>
+                    </div>
+                    <button type="submit">Create URL</button>
+                </form>
+            </section>
+
+            <div class="created-link form" ref="createdLinks" v-if="isLinkUsable">
+                <div class="created-link-header">
+                    <h3>Created URLs</h3>
+                    <div class="link-table-headers">
+                        <h4>URL</h4>
+                        <h4>Shortened URL</h4>
+                    </div>
+                </div>
+                <div class="created-links-wrapper" v-for="item in createdUrls" :key="item._id">
+                    <div class="created-link-col">
+                        <div class="link-group">
+                            <input readonly="readonly" id="focus-url" name="focus-url" class="global-input" :value="item.url" />
+                        </div>
+                        <div class="link-group">
+                            <input readonly="readonly" id="created-link" v-bind:name="item._id" class="global-input" :value="'slicer.fun/' + item.slug" />
+                        </div>
+                    </div>
+                    <div class="created-link-col">
+                        <button v-on:click="copyToClipboard" v-if="item._id==copiedUrl"  v-bind:class="{ copied: item._id==copiedUrl }" v-bind:id="item._id">Copied</button>
+                        <button v-on:click="copyToClipboard" v-else v-bind:class="{ copied: item._id==copiedUrl }" v-bind:id="item._id">Copy</button>
+                    </div>
+                </div>
+            </div>
+            
+    
+        <div class="links-wrapper">
+            <div class="link-item">
+                <a href="https://github.com/kaanersoy/slicer-fun" rel="noopener" target="_blank"><img src="./assets/github-logo-32.svg" alt="Slicer Github"></a>
+            </div>
+            <div class="slash">
+                <span>/</span>
+            </div>
+            <div class="link-item">
+                <a href="https://github.com/kaanersoy" rel="noopener" target="_blank">Kaan Ersoy</a>
+            </div>
+        </div>
+        <div class="alert-message-wrapper" v-bind:class="{ active: alertMessage }">
+            <div class="alert-content">
+                <p>{{responseMessage}}</p>
+                <button @click="disableAlertMess"><img src="./assets/icons/close-icon.svg" alt="Close Icon for Alert"></button>
+            </div>
+        </div>
     </main>
-    <div class="links-wrapper">
-        <div class="link-item">
-            <a href="https://github.com/kaanersoy/slicer-fun" rel="noopener" target="_blank"><img src="./assets/github-logo-32.svg" alt="Slicer Github"></a>
-        </div>
-        <div class="slash">
-            <span>/</span>
-        </div>
-        <div class="link-item">
-            <a href="https://github.com/kaanersoy" rel="noopener" target="_blank">Kaan Ersoy</a>
-        </div>
-    </div>
     <!-- FOR DEV -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script> -->
-    <script src="./assets/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <!-- <script src="./assets/vue.min.js"></script> -->
     <script src="./app.js"></script>
 </body>
 </html>
