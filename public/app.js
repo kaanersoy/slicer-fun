@@ -48,7 +48,7 @@ const app = new Vue({
                 this.disableAlertMess();
                 setTimeout(() => {
                     this.activeAlertMess();
-                }, 300);
+                }, 220);
             })
             .catch((err) => {
                 console.error("Error : ", err);
