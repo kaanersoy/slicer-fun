@@ -435,6 +435,7 @@ body.dark-mode form button{
 .links-wrapper{display: flex; align-items: center; position: absolute; top: 0; right: 0;padding-top: 5px;}
 .links-wrapper .link-item{margin: 0 5px;}
 .links-wrapper .link-item a{color: rgb(var(--maincolor));display: block;line-height: 1; margin: 0; padding: 0;}
+.links-wrapper .link-item a img{ width: 20px; height: 20px;}
 .links-wrapper .slash span{color: rgb(var(--maincolor));}
 
 

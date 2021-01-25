@@ -99,9 +99,11 @@
                 <div class="created-links-wrapper" v-for="item in createdUrls" :key="item._id">
                     <div class="created-link-col">
                         <div class="link-group">
+                            <label for="created-link">URL</label>
                             <input readonly="readonly" id="focus-url" name="focus-url" class="global-input" :value="item.url" />
                         </div>
                         <div class="link-group">
+                            <label for="created-link">Shortened URL</label>
                             <input readonly="readonly" id="created-link" v-bind:name="item._id" class="global-input" :value="'slicer.fun/' + item.slug" />
                         </div>
                     </div>
