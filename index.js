@@ -4,7 +4,7 @@ const monk = require('monk');
 const cors = require('cors');
 const morgan = require('morgan');
 const {nanoid} = require('nanoid');
-
+const helmet = require('helmet');
 require('dotenv').config();
 
 const {DB_URL, PORT} = process.env;
@@ -18,6 +18,11 @@ const app = express();
 
 //MiddleWares!!!!
 app.use(morgan('tiny'));
+app.use(
+    helmet({
+      contentSecurityPolicy: false,
+    })
+);
 app.use(cors());
 app.use(express.json());
 app.use(express.static("public"));
