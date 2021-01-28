@@ -8,7 +8,6 @@ const app = new Vue({
         isActive: false,
         responseMessage: null,
         isLinkUsable: false,
-        redirectURL: null,
         createdUrl: null,
         createdUrls: [],
         copiedUrl: null,
@@ -51,14 +50,10 @@ const app = new Vue({
                     }else{
                         this.responseMessage=data.message;
                     }
-                    if(this.isActive == false){
-                        this.isActive = true;
-                    }
                     if(data.url){
                         this.createdUrl = data;
                         this.createdUrls.push(this.createdUrl);
                         this.isLinkUsable = true;
-                        this.redirectURL = `${window.location.origin}/${this.slug}`;
                         this.responseMessage = "Link is Created😍";
                     }
                     this.disableAlertMess();
