@@ -25,3 +25,8 @@ A youtube tutorial here: [SLICER | Easiest URL Shortener - Kaan Ersoy](https://y
 
 - `npm run dev` (for dev mode)
 - `npm run start` (for production mode)
+
+
+## TODO List
+
+- List of created URLs for no more duplication.
