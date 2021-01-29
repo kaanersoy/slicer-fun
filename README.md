@@ -11,3 +11,17 @@ It is a URL shortener to get shortened URLs.
 ## Usage
 
 A youtube tutorial here: [SLICER | Easiest URL Shortener - Kaan Ersoy](https://youtu.be/42bQf-04q6Y)
+
+## Install
+
+- `cd projectpath && npm install`
+
+- Clone the project with:  
+`$ git clone https://github.com/kaanersoy/slicer-fun.git`
+
+- Pass your **database connection string** and  **production port** to .env file like: 
+`DB_URL=example.url`
+`PORT=1523`
+
+- `npm run dev` (for dev mode)
+- `npm run start` (for production mode)
