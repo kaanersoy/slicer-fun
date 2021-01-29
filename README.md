@@ -27,10 +27,6 @@ A youtube tutorial here: [SLICER | Easiest URL Shortener - Kaan Ersoy](https://y
 - `npm run start` (for production mode)
 
 
-## TODO List
-
-- List of created URLs for no more duplication.
-
 ## API Usage
 - **URL Creation:** 
 
@@ -44,3 +40,8 @@ A youtube tutorial here: [SLICER | Easiest URL Shortener - Kaan Ersoy](https://y
 	 `GET /:id`
 	 
 	Auto redirects to URL inserted in DB.
+
+
+## TODO List
+
+- List of created URLs for no more duplication.
