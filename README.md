@@ -37,7 +37,7 @@ A youtube tutorial here: [SLICER | Easiest URL Shortener - Kaan Ersoy](https://y
 | - | /url (POST) |
 |--|--|
 | url (string)| required  |
-| slug (string) | required |
+| slug (string) | not required |
 
 - **Redirection:** 
 
