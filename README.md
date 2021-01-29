@@ -30,3 +30,17 @@ A youtube tutorial here: [SLICER | Easiest URL Shortener - Kaan Ersoy](https://y
 ## TODO List
 
 - List of created URLs for no more duplication.
+
+## API Usage
+- **URL Creation:** 
+
+| - | /url (POST) |
+|--|--|
+| url (string)| required  |
+| slug (string) | required |
+
+- **Redirection:** 
+
+	 `GET /:id`
+	 
+	Auto redirects to URL inserted in DB.
