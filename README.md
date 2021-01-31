@@ -44,4 +44,4 @@ A youtube tutorial here: [SLICER | Easiest URL Shortener - Kaan Ersoy](https://y
 
 ## TODO List
 
-- List of created URLs for no more duplication.
+- [ ] List of created URLs for no more duplication.
