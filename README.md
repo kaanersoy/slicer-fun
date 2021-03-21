@@ -1,9 +1,11 @@
 # SLICER | URL Shortener
+
 ![alt text](https://github.com/kaanersoy/slicer-fun/blob/main/public/assets/slicer-logo-purp.svg)
 
 It is a URL shortener to get shortened URLs.
 
 ## Used Tecnologies
+
 - Heroku(Hosting)
 - MongoDB(Database)
 - NodeJS(Serving HTML files and API)
@@ -14,34 +16,45 @@ A youtube tutorial here: [SLICER | Easiest URL Shortener - Kaan Ersoy](https://y
 
 ## Install
 
-- Clone the project with:  
-`$ git clone https://github.com/kaanersoy/slicer-fun.git`
+- Clone the project with:
 
-- `cd projectpath && npm install`
+  ```bash
+  $ git clone https://github.com/kaanersoy/slicer-fun.git
+  ```
 
-- Pass your **database connection string** and  **production port** to .env file like: 
-`DB_URL=example.url`
-`PORT=1523`
+- Go to path of project
 
-- `npm run dev` (for dev mode)
-- `npm run start` (for production mode)
+  ```bash
+  $ cd projectpath && npm install
+  ```
 
+- Pass your **database connection string** and **production port** to .env file like:
+
+  ```
+  DB_URL=example.url
+  PORT=1523
+  ```
+
+- Run the project
+
+  ```bash
+  # for developer mode
+  $ npm run dev
+  # for production mode
+  $ npm run start
+  ```
 
 ## API Usage
-- **URL Creation:** 
 
-| - | /url (POST) |
-|--|--|
-| url (string)| required  |
+- **URL Creation:**
+
+| -             | /url (POST)  |
+| ------------- | ------------ |
+| url (string)  | required     |
 | slug (string) | not required |
 
-- **Redirection:** 
+- **Redirection:**
 
-	 `GET /:id`
-	 
-	Auto redirects to URL inserted in DB.
+  `GET /:id`
 
-
-## TODO List
-
-- [ ] List of created URLs for no more duplication.
+  Auto redirects to URL inserted in DB.
