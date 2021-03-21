@@ -28,7 +28,7 @@ A youtube tutorial here: [SLICER | Easiest URL Shortener - Kaan Ersoy](https://y
   $ cd projectpath && npm install
   ```
 
-- Pass your **database connection string** and **production port** to .env file like:
+- Pass your **database connection string** and **production port** to `.env` file like:
 
   ```
   DB_URL=example.url
