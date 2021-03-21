@@ -5,5 +5,5 @@ const config = require('./config/index');
 loaders(app);
 
 app.listen(config.port, () => {
-    console.log(`Port is active in ${config.port}`)
+  console.log(`Port is active in ${config.port}`);
 });
