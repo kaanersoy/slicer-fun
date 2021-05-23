@@ -862,7 +862,7 @@ monk-middleware-wait-for-connection@^0.2.0:
   resolved "https://registry.yarnpkg.com/monk-middleware-wait-for-connection/-/monk-middleware-wait-for-connection-0.2.0.tgz#312958d30e588b57d09754dd7c97b4843316835a"
   integrity sha1-MSlY0w5Yi1fQl1TdfJe0hDMWg1o=
 
-monk@^7.3.2:
+monk@^7.3.4:
   version "7.3.4"
   resolved "https://registry.yarnpkg.com/monk/-/monk-7.3.4.tgz#50ccd7daebb4c16ace58d45b2c28c29112f8a85e"
   integrity sha512-PkPNiElwroVyKQj01usyziOvwiKYBUVSq7YU1FB4KFr0J3v0GeXW0TebYsLR4u33WB8JGqPiAcuzDspfdujqQg==
