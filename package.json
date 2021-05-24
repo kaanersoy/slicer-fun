@@ -15,10 +15,14 @@
     "express": "^4.17.1",
     "express-async-handler": "^1.1.4",
     "helmet": "^4.4.1",
-    "monk": "^7.3.2",
+    "monk": "^7.3.4",
     "morgan": "^1.10.0",
     "nanoid": "^3.1.20",
     "nodemon": "^2.0.6",
     "yup": "^0.32.8"
+  },
+  "devDependencies": {
+    "eslint": "^7.27.0",
+    "eslint-plugin-node": "^11.1.0"
   }
 }
