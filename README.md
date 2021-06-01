@@ -46,7 +46,7 @@ A youtube tutorial here: [SLICER | Easiest URL Shortener - Kaan Ersoy](https://y
 
 ## API Usage
 
-API URI: https://slicer.fun
+API URI: https://www.slicer.fun
 
 ### Create Shortened URL
 
