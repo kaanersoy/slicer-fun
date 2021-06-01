@@ -46,15 +46,42 @@ A youtube tutorial here: [SLICER | Easiest URL Shortener - Kaan Ersoy](https://y
 
 ## API Usage
 
-- **URL Creation:**
+API URI: https://slicer.fun
 
-| -             | /url (POST)  |
-| ------------- | ------------ |
-| url (string)  | required     |
-| slug (string) | not required |
+### Create Shortened URL
 
-- **Redirection:**
+`slug` is optional, you can generate random slugs if you don't send slug.
 
-  `GET /:id`
+Example Request:
 
-  Auto redirects to URL inserted in DB.
+```js
+fetch('https://slicer.fun/url', {
+  method: 'POST',
+  headers: {
+    headers: {
+      'Content-Type': 'application/json'
+    },
+  }
+  body: JSON.stringify({
+    url: 'https://google.com',
+    slug: 'google' // optional
+  })
+})
+```
+Response: 
+```json
+{
+  "_id": "60ab36s7b1ee4cc2dd9e3b576",
+  "url": "https://google.com",
+  "slug": "google"
+}
+```
+
+### Redirection:
+
+Just do a simple get request from client.
+
+Example: 
+```
+https://slicer.fun/:slug
+```
