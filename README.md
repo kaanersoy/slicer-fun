@@ -55,7 +55,7 @@ API URI: https://slicer.fun
 Example Request:
 
 ```js
-fetch('https://slicer.fun/url', {
+fetch('https://www.slicer.fun/url', {
   method: 'POST',
   headers: {
     headers: {
