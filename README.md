@@ -16,26 +16,26 @@ A youtube tutorial here: [SLICER | Easiest URL Shortener - Kaan Ersoy](https://y
 
 ## Install
 
-- Clone the project with:
+#### Clone the project with:
 
   ```bash
   $ git clone https://github.com/kaanersoy/slicer-fun.git
   ```
 
-- Go to path of project
+#### Go to path of project
 
   ```bash
   $ cd projectpath && npm install
   ```
 
-- Pass your **database connection string** and **production port** to -> `.env`
+#### Fill the `env` variables
 
   ```
   DB_URL=example.url
   PORT=1523
   ```
 
-- Run the project
+#### Run the project
 
   ```bash
   # for developer mode
