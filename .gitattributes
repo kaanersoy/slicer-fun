@@ -2,3 +2,4 @@
 * text=auto
 public/**.html linguist-vendored
 public/**.svg linguist-vendored
+public/**.scss linguist-vendored
